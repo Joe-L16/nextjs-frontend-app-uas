@@ -25,10 +25,11 @@ export default function Sidebar() {
                 Books
               </Button>
               <div className="sb-sidenav-menu-heading">Interface</div>
-              <a
-                className="nav-link collapsed"
+              <Button
+                type="link"
                 href="#"
-                data-bs-toggle="collapse"
+                className={['nav-link', 'collapsed']}
+                data-bs-toggle="collapse" 
                 data-bs-target="#collapseLayouts"
                 aria-expanded="false"
                 aria-controls="collapseLayouts"
@@ -40,7 +41,7 @@ export default function Sidebar() {
                 <div className="sb-sidenav-collapse-arrow">
                   <i className="fas fa-angle-down"></i>
                 </div>
-              </a>
+              </Button>
               <div
                 className="collapse"
                 id="collapseLayouts"
@@ -48,17 +49,18 @@ export default function Sidebar() {
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav className="sb-sidenav-menu-nested nav">
-                  <a className="nav-link" href="layout-static.html">
+                  <Button type="link" href="layout-static.html" className={['nav-link']}>
                     Static Navigation
-                  </a>
-                  <a className="nav-link" href="layout-sidenav-light.html">
+                  </Button>
+                  <Button type="link" href="layout-sidenav-light.html" className={['nav-link']}>
                     Light Sidenav
-                  </a>
+                  </Button>
                 </nav>
               </div>
-              <a
-                className="nav-link collapsed"
+              <Button
+                type="link"
                 href="#"
+                className={['nav-link', 'collapsed']}
                 data-bs-toggle="collapse"
                 data-bs-target="#collapsePages"
                 aria-expanded="false"
@@ -71,7 +73,7 @@ export default function Sidebar() {
                 <div className="sb-sidenav-collapse-arrow">
                   <i className="fas fa-angle-down"></i>
                 </div>
-              </a>
+              </Button>
               <div
                 className="collapse"
                 id="collapsePages"
@@ -82,9 +84,10 @@ export default function Sidebar() {
                   className="sb-sidenav-menu-nested nav accordion"
                   id="sidenavAccordionPages"
                 >
-                  <a
-                    className="nav-link collapsed"
+                  <Button
+                    type="link"
                     href="#"
+                    className={['nav-link', 'collapsed']}
                     data-bs-toggle="collapse"
                     data-bs-target="#pagesCollapseAuth"
                     aria-expanded="false"
@@ -94,7 +97,7 @@ export default function Sidebar() {
                     <div className="sb-sidenav-collapse-arrow">
                       <i className="fas fa-angle-down"></i>
                     </div>
-                  </a>
+                  </Button>
                   <div
                     className="collapse"
                     id="pagesCollapseAuth"
@@ -102,20 +105,21 @@ export default function Sidebar() {
                     data-bs-parent="#sidenavAccordionPages"
                   >
                     <nav className="sb-sidenav-menu-nested nav">
-                      <a className="nav-link" href="login.html">
+                      <Button type="link" href="login.html" className={['nav-link']}>
                         Login
-                      </a>
-                      <a className="nav-link" href="register.html">
+                      </Button>
+                      <Button type="link" href="register.html" className={['nav-link']}>
                         Register
-                      </a>
-                      <a className="nav-link" href="password.html">
+                      </Button>
+                      <Button type="link" href="password.html" className={['nav-link']}>
                         Forgot Password
-                      </a>
+                      </Button>
                     </nav>
                   </div>
-                  <a
-                    className="nav-link collapsed"
+                  <Button
+                    type="link"
                     href="#"
+                    className={['nav-link', 'collapsed']}
                     data-bs-toggle="collapse"
                     data-bs-target="#pagesCollapseError"
                     aria-expanded="false"
@@ -125,7 +129,7 @@ export default function Sidebar() {
                     <div className="sb-sidenav-collapse-arrow">
                       <i className="fas fa-angle-down"></i>
                     </div>
-                  </a>
+                  </Button>
                   <div
                     className="collapse"
                     id="pagesCollapseError"
@@ -133,32 +137,32 @@ export default function Sidebar() {
                     data-bs-parent="#sidenavAccordionPages"
                   >
                     <nav className="sb-sidenav-menu-nested nav">
-                      <a className="nav-link" href="401.html">
+                      <Button type="link" href="401.html" className={['nav-link']}>
                         401 Page
-                      </a>
-                      <a className="nav-link" href="404.html">
+                      </Button>
+                      <Button type="link" href="404.html" className={['nav-link']}>
                         404 Page
-                      </a>
-                      <a className="nav-link" href="500.html">
+                      </Button>
+                      <Button type="link" href="500.html" className={['nav-link']}>
                         500 Page
-                      </a>
+                      </Button>
                     </nav>
                   </div>
                 </nav>
               </div>
               <div className="sb-sidenav-menu-heading">Addons</div>
-              <a className="nav-link" href="charts.html">
+              <Button type="link" href="charts.html" className={['nav-link']}>
                 <div className="sb-nav-link-icon">
                   <i className="fas fa-chart-area"></i>
                 </div>
                 Charts
-              </a>
-              <a className="nav-link" href="tables.html">
+              </Button>
+              <Button type="link" href="tables.html" className={['nav-link']}>
                 <div className="sb-nav-link-icon">
                   <i className="fas fa-table"></i>
                 </div>
                 Tables
-              </a>
+              </Button>
             </div>
           </div>
           <div className="sb-sidenav-footer">
