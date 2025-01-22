@@ -4,7 +4,7 @@ const ROOT_API = process.env.NEXT_PUBLIC_API;
 const API_VERSION = 'api/v1';
 
 export async function userService() {
-  const url = `${ROOT_API}/${API_VERSION}/user`;
+  const url = `${ROOT_API}/${API_VERSION}/author`;
 
   return callAPI({
     url,
@@ -14,7 +14,7 @@ export async function userService() {
 }
 
 export async function userServiceStore(data: FormData) {
-  const url = `${ROOT_API}/${API_VERSION}/user`;
+  const url = `${ROOT_API}/${API_VERSION}/author`;
 
   return callAPI({
     url,
@@ -24,7 +24,7 @@ export async function userServiceStore(data: FormData) {
 }
 
 export async function userServiceEdit(id: string) {
-  const url = `${ROOT_API}/${API_VERSION}/user/${id}/edit`;
+  const url = `${ROOT_API}/${API_VERSION}/author/${id}/edit`;
 
   return callAPI({
     url,
@@ -33,7 +33,7 @@ export async function userServiceEdit(id: string) {
 }
 
 export async function userServiceUpdate(data: FormData, id: string) {
-  const url = `${ROOT_API}/${API_VERSION}/user/${id}`;
+  const url = `${ROOT_API}/${API_VERSION}/author/${id}`;
 
   return callAPI({
     url,
@@ -43,7 +43,7 @@ export async function userServiceUpdate(data: FormData, id: string) {
 }
 
 export async function userServiceDestroy(id: string) {
-  const url = `${ROOT_API}/${API_VERSION}/user/${id}`;
+  const url = `${ROOT_API}/${API_VERSION}/author/${id}`;
 
   return callAPI({
     url,
