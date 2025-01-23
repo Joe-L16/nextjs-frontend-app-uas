@@ -16,7 +16,7 @@ export default function Sidebar() {
                 <div className="sb-nav-link-icon">
                   <i className="fas fa-users"></i>
                 </div>
-                Users
+                Authors
               </Button>
               <Button type="link" className={['nav-link']} href="/books">
                 <div className="sb-nav-link-icon">
