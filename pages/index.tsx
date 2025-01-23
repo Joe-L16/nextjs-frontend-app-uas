@@ -4,8 +4,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { userType } from '@/service/data-types/user-type';
 import { userService, userServiceDestroy } from '@/service/user-service';
 import Button from '@/components/atoms/Button';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [users, setUsers] = useState<userType[]>([]);
 
@@ -39,6 +41,10 @@ export default function Home() {
     } catch (error) {
       alert((error as Error).message);
     }
+  };
+
+  const handleDetail = (id: string) => {
+    router.push(`/user/detail/${id}`);
   };
 
   useEffect(() => {
@@ -102,9 +108,7 @@ export default function Home() {
                       <td>
                         <Button
                           type="button"
-                          // onClickButton={
-                          //   () => handleDetail(item.id)
-                          // }
+                          onClickButton={() => item?.id && handleDetail(item.id.toString())}
                           className={['btn btn-success btn-sm me-2']}
                         >
                           Detail
