@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Layout from '@/components/organisms/Layout';
 import { useCallback, useEffect, useState } from 'react';
 import { userType } from '@/service/data-types/user-type';
-import { userService } from '@/service/user-service';
+import { userService, userServiceDestroy } from '@/service/user-service';
 import Button from '@/components/atoms/Button';
 
 export default function Home() {
@@ -27,6 +27,20 @@ export default function Home() {
     }
   }, []);
 
+  const handleDelete = async (id: string) => {
+    try {
+      const response = await userServiceDestroy(id);
+      if (!response.error) {
+        alert('User deleted successfully!');
+        getUser(); // Refresh the list after deletion
+      } else {
+        alert('Failed to delete user');
+      }
+    } catch (error) {
+      alert((error as Error).message);
+    }
+  };
+
   useEffect(() => {
     getUser();
   }, [getUser]);
@@ -41,14 +55,14 @@ export default function Home() {
       </Head>
       <Layout>
         <div className="container-fluid px-4">
-          <h1 className="mt-4">Users</h1>
+          <h1 className="mt-4">Authors</h1>
           <ol className="breadcrumb mb-4">
-            <li className="breadcrumb-item active">Users</li>
+            <li className="breadcrumb-item active">Authors</li>
           </ol>
           <div className="card mb-4">
             <div className="card-header">
               <i className="fas fa-table me-1"></i>
-              Data Users{' '}
+              Data Authors{' '}
               <div className="d-flex justify-content-end gap-1">
                 <Button
                   type="button"
@@ -74,6 +88,7 @@ export default function Home() {
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Birthdate</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -83,6 +98,7 @@ export default function Home() {
                       <th scope="row">{index + 1}</th>
                       <td>{item.name}</td>
                       <td>{item.birthdate}</td>
+                      <td>{item.email}</td>
                       <td>
                         <Button
                           type="button"
@@ -96,18 +112,16 @@ export default function Home() {
                         <Button
                           type="link"
                           href={`user/edit/${item.id}`}
-                          className={['btn btn-warning btn-sm']}
+                          className={['btn btn-warning btn-sm me-2']}
                         >
                           Update
                         </Button>
                         <Button
-                          type="link"
-                          // onClickButton={
-                          //   () => handleDetele(item.id)
-                          // }
-                          className={['btn btn-warning btn-sm']}
+                          type="button"
+                          onClickButton={() => item?.id && handleDelete(item.id.toString())}
+                          className={['btn btn-danger btn-sm']}
                         >
-                          delete
+                          Delete
                         </Button>
                       </td>
                     </tr>
