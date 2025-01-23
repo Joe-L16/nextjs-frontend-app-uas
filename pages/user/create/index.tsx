@@ -53,9 +53,9 @@ export default function CreateUser() {
     <>
       <Layout>
         <div className="container-fluid px-4">
-          <h1 className="mt-4">Users</h1>
+          <h1 className="mt-4">Authors</h1>
           <ol className="breadcrumb mb-4">
-            <li className="breadcrumb-item">Users</li>
+            <li className="breadcrumb-item">Authors</li>
             <li className="breadcrumb-item active">Tambah data</li>
           </ol>
 
